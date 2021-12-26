@@ -1,0 +1,62 @@
+<html>
+
+<head>
+	<title>Swagger</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body>
+  <nav id="nav-bar">
+		<h1>Swagger</h1>
+	</nav>
+  <section class="container">
+    <h1 class="swagger-title">Exercise Tracker - Swagger</h1>
+    <p>[ Base URL: <script>document.write(window.location.origin)</script> ]</p>
+     <div class="grid-container">
+       <form action="/api/users" method="post">
+        <h3>Create a New User</h3>
+        <p class="api post_url">
+          <span class="method post_method">POST</span>/api/users</p>
+        <input id="uname" type="text" name="username" placeholder="username" />
+        <input type="submit" value="Submit" />
+      </form>
+      <form action="/api/users" method="get">
+        <h3>Get Users</h3>
+        <p class="api get_url">
+          <span class="method get_method">GET</span>/api/users</p>
+        <input type="submit" value="Submit" />
+      </form>
+      <form id="exercise-form" method="post">
+        <h3>Add exercises</h3>
+        <p class="api post_url">
+          <span class="method post_method">POST</span>/api/users/:_id/exercises</p>
+        <input id="uid" type="text" name=":_id" placeholder=":_id" />
+        <input id="desc" type="text" name="description" placeholder="description*" />
+        <input id="dur" type="text" name="duration" placeholder="duration* (mins.)" />
+        <input id="date" type="text" name="date" placeholder="date (yyyy-mm-dd)" />
+        <input type="submit" value="Submit" />
+      </form>
+      <form id="exercise-log-form" method="post">
+        <h3>Get exercise logs</h3>
+        <p class="api get_url">
+          <span class="method get_method">GET</span>/api/users/:_id/logs?[from][&to][&limit]</p>
+        <input id="uid" type="text" name=":_id" placeholder=":_id" />
+        <input id="from" type="text" name="from" placeholder="from" />
+        <input id="to" type="text" name="to" placeholder="to" />
+        <input id="limit" type="text" name="limit" placeholder="limit" />
+        <input type="submit" value="Submit" />
+      </form>
+     </div>
+  </section>
+  <script>
+      const exerciseForm = document.getElementById("exercise-form");
+      exerciseForm.addEventListener("submit", () => {
+        const userId = document.getElementById("uid").value;
+        exerciseForm.action = `/api/users/${userId}/exercises`;
+        exerciseForm.submit();
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto","sans-serif";
+  background: #fafafa;
+}
+
+h1 {
+  font-weight: bold;  
+}
+
+p {
+  max-width: 900px;
+}
+
+nav#nav-bar {
+  background-color: gold;
+  color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 20px;
+}
+
+nav h1 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+.swagger-title{
+  font-size: 2rem;
+}
+
+.container {
+  padding-top: 100px;
+  margin: 0 40px;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.method{  
+  color: white;
+  border-radius: 5px;
+  padding: 4px 8px;
+  margin-right: 10px;
+}
+
+.post_method {
+  background-color: #49cc90;
+}
+
+.get_method {
+  background-color: #61affe;
+}
+
+p.api {
+  border-radius: 5px;
+  padding: 8px 4px;
+}
+
+.post_url{
+  border: 2px solid #49cc90;
+  background: rgba(73,204,144,.1);
+}
+
+.get_url{
+  border: 2px solid #61affe;
+  background: rgba(119, 253, 193, 0.1);
+}
+
+form {
+  margin-bottom: 25px;
+  padding: 15px;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+}
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  font-size: 16px;
+  outline: 0;
+}
+
+input[type=submit] {
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: #E4F1FE;
+  border: 1px solid grey;
+  box-shadow: 2px 2px #999;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #FFFEC4;
+}
+
+code {
+  font-family: monospace;
+  font-size: 1rem;
+  background-color: #FFFEC4;
+  padding: 2px;
+}
